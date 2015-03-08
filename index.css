@@ -1,8 +1,23 @@
-td{ width: 50px; height: 50px; background-color: #336699; }
+td{ width: 50px; height: 50px; background-color: #ffffff; }
 /*td.green { background-color: #00cc00; }*/
 
 body {
-    background-image: url("http://www.dogsforthedisabled.org/wp-content/uploads/2010/11/Ramzi-Roma-Romo-Rio-Ringo.jpg");
-    background-repeat:no-repeat;
-	background-size:cover;
+	background-image: url("http://giphy.com/gifs/space-stars-10dlNOCqjBh4Fq");
+    background-repeat:repeat;
+}
+	
+#title{
+	font-size: 150px;
+	text-align: center;
+	color: blue;
+	margin-bottom: 0px;
+}
+
+#table{
+	text-align: center;
+	margin-left:auto; 
+    margin-right:auto;
+    width: 500px;
+    height: 500px;
+    margin-top: 0px;
 }

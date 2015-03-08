@@ -1,15 +1,12 @@
-	console.log("here");
+	console.log($("td").css("background-color"));
 
 $(document).ready(function(){
 	$("td").click(function () {
-
-		var table=document.getElementById('table');
-   		//$(this).toggleClass("green");
-   		if($(table.rows[0].cells[0]).css("background-color") === 'rgb(51, 102, 153)'){
-   			table.rows[0].cells[0].style.backgroundColor = 'rgb(206, 189, 189)';
+		if($(this).css("background-color") === 'rgb(255, 255, 255)'){
+   			 $(this).css("background-color","yellow");
    		}
    		else{
-   			table.rows[0].cells[0].style.backgroundColor = 'rgb(51, 102, 153)';
+   			$(this).css("background-color","white");
    		}
 
 
@@ -22,6 +19,8 @@ $(document).ready(function(){
 
 
 
+
+   		
 
 
 
@@ -35,34 +34,50 @@ $(document).ready(function(){
 
 
 
+function winner(){
 
-/*
-color();
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC", true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4) {
+  	var gif = jQuery.parseJSON(xhr.responseText);
+  	var url = gif.data.image_url;
+  	var bg = "url(" + url + ")";
+
+  	console.log(bg);
+  	document.body.innerHTML = "<h1>YOU WIN!!!!!</h1>";
+  	$('h1').css({
+  	fontSize: '200px',
+  	color: 'red',
+    left: '0',
+    lineHeight: '200px',
+    margin: 'auto',
+    marginTop: '-100px',
+    position: 'absolute',
+    top: '50%',
+    width: '100%',
+	});
+    document.body.style.backgroundImage = bg;
+    window.setInterval(function test(){ 
+    		var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    $('h1').css("color", color);
+
+     }, 1000);   
 
 
 
+  }
+}
+xhr.send();
 
-
-
-
-
-
-
-
-function color(){
-	document.getElementbyId("test").style.color = "blue";
 }
 
 
-	console.log("here");
-	document.getElementbyId("test").style.color = "blue";
-$("#test").click(
-	function() {
-		console.log("there");
-		document.getElementbyId("test").style.color = "blue";
-
-		console.log("yo");
-	}
 
 
 
@@ -70,5 +85,11 @@ $("#test").click(
 
 
 
-	);
-*/
+
+
+
+
+
+
+
+
