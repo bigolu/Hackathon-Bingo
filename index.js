@@ -9,21 +9,11 @@ $(document).ready(function(){
    			$(this).css("background-color","white");
    		}
 
+   		var table = document.getElementById("table");
 
-
-
-
-
-
-
-
-
-
-
-   		
-
-
-
+   		if(youWon(table)){
+   			winner();
+   		}
 	});	
 });
 
@@ -78,7 +68,43 @@ xhr.send();
 }
 
 
+function youWon(table){
+	for(i = 0; i < table.rows.length; i++){
+		var count = 0;
+		console.log("here");
+		for(j = 0; j < table.rows.length; j++){
+			console.log("there");
+			if($(table.rows[i].cells[j]).css("background-color") != 'rgb(255, 255, 255)')
 
+				count++;
+		}
+		if(count === 5){
+			return true;
+		}
+	}
+
+	for(i = 0; i < table.rows.length; i++){
+		var count = 0;
+		for(j = 0; j < table.rows.length; j++){
+			if($(table.rows[j].cells[i]).css("background-color") != 'rgb(255, 255, 255)')
+				count++;
+		}
+		if(count === 5){
+			return true;
+		}
+	}
+
+	for(i = 0, j = 0; (i < table.rows.length) && (i < table.rows.length); i++, j++){
+		var count = 0;
+		for(j = 0; j < table.rows.length; j++){
+			if($(table.rows[j].cells[i]).css("background-color") != 'rgb(255, 255, 255)')
+				count++;
+		}
+		if(count === 5){
+			return true;
+		}
+	}
+}
 
 
 
