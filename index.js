@@ -57,7 +57,7 @@ xhr.onreadystatechange = function() {
 
     $('h1').css("color", color);
 
-     }, 1000);   
+     }, 100);   
 
 
 
@@ -71,9 +71,7 @@ xhr.send();
 function youWon(table){
 	for(i = 0; i < table.rows.length; i++){
 		var count = 0;
-		console.log("here");
 		for(j = 0; j < table.rows.length; j++){
-			console.log("there");
 			if($(table.rows[i].cells[j]).css("background-color") != 'rgb(255, 255, 255)')
 
 				count++;
@@ -94,15 +92,23 @@ function youWon(table){
 		}
 	}
 
-	for(i = 0, j = 0; (i < table.rows.length) && (i < table.rows.length); i++, j++){
-		var count = 0;
-		for(j = 0; j < table.rows.length; j++){
+	var count = 0;
+	for(i = 0, j = 0; (i < table.rows.length) && (j < table.rows.length); i++, j++){
 			if($(table.rows[j].cells[i]).css("background-color") != 'rgb(255, 255, 255)')
 				count++;
-		}
-		if(count === 5){
-			return true;
-		}
+	}
+	if(count === 5){
+		return true;
+	}
+
+	var count = 0;
+	for(i = table.rows.length - 1, j = 0; (i >= 0) && (j < 5); i--, j++){
+			if($(table.rows[j].cells[i]).css("background-color") != 'rgb(255, 255, 255)'){
+				count++;
+			}
+	}
+	if(count === 5){
+		return true;
 	}
 }
 
