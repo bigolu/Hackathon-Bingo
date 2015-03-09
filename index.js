@@ -33,8 +33,7 @@ xhr.onreadystatechange = function() {
   	var gif = jQuery.parseJSON(xhr.responseText);
   	var url = gif.data.image_url;
   	var bg = "url(" + url + ")";
-
-  	console.log(bg);
+  	
   	document.body.innerHTML = "<h1>YOU WIN!!!!!</h1>";
   	$('h1').css({
   	fontSize: '200px',
