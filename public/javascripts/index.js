@@ -18,7 +18,7 @@ function start_game(){
 /* Shows the page for winners */
 function winner(){
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC", true); //get a random gif
+xhr.open("GET", "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC", true); //get a random gif
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
 		/* Change background to a gif*/
