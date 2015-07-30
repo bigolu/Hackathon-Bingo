@@ -8,3 +8,5 @@ If you're ever at a hackathon and your code just refuses to run, you can relax w
 
 ##Resources
 <a href="https://api.giphy.com/" target="_blank">Giphy API</a>
+
+Play it <a href="https://hack-bingo.herokuapp.com/" target="_blank">here</a>.
