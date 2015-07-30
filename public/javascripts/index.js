@@ -28,7 +28,7 @@ xhr.onreadystatechange = function() {
 		document.body.style.backgroundImage = bg;
 
 		/* Display you win in big letters */
-  	document.body.innerHTML = "<h1>YOU WIN!!!!!</h1>";
+  	document.body.innerHTML = '<a href="https://hack-bingo.herokuapp.com/"><h1>YOU WIN!!!!!</h1></a>';
 	  	$('h1').css({
 	  	fontSize: '200px',
 	  	color: 'red',
